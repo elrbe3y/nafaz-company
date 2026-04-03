@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   creator: "Nafaz",
   publisher: "Nafaz",
   verification: {
-    google: process.env.GOOGLE_SITE_VERIFICATION,
+    google: "VSFhq4mZkkeOIi_2NasB8gxsNtTi_tIaz1LbxIiNEvI",
   },
   alternates: {
     canonical: "/",
