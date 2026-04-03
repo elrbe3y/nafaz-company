@@ -18,6 +18,7 @@ import {
   FiShoppingBag,
   FiUser,
 } from "react-icons/fi";
+import { FaFacebookF, FaInstagram } from "react-icons/fa6";
 import { getPublishedProjectsByLang } from "@/lib/projects";
 
 type Lang = "ar" | "en";
@@ -55,6 +56,8 @@ const localized = {
     send: "إرسال",
     copyright: "© 2026 جميع الحقوق محفوظة",
     whatsappAria: "واتساب",
+    facebookText: "فيسبوك",
+    instagramText: "إنستجرام",
     logoAlt: "شعار نَفِّذ",
     langButton: "EN",
   },
@@ -86,6 +89,8 @@ const localized = {
     send: "Send",
     copyright: "© 2026 All rights reserved",
     whatsappAria: "WhatsApp",
+    facebookText: "Facebook",
+    instagramText: "Instagram",
     logoAlt: "Nafaz logo",
     langButton: "AR",
   },
@@ -443,6 +448,24 @@ export default async function PortfolioPage({ lang }: PortfolioPageProps) {
               <FiMapPin className="h-4 w-4 text-blue-600" aria-hidden />
               Egypt
             </p>
+            <a
+              href="https://www.facebook.com/profile.php?id=61576117874945"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-blue-700 transition hover:text-blue-800"
+            >
+              <FaFacebookF className="h-4 w-4" aria-hidden />
+              {t.facebookText}
+            </a>
+            <a
+              href="https://www.instagram.com/nafazsolutions/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-pink-600 transition hover:text-pink-700"
+            >
+              <FaInstagram className="h-4 w-4" aria-hidden />
+              {t.instagramText}
+            </a>
           </div>
         </div>
       </section>
