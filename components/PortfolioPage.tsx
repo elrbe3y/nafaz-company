@@ -379,11 +379,13 @@ export default async function PortfolioPage({ lang }: PortfolioPageProps) {
         <h2 className="text-3xl font-bold text-blue-700">{t.contactTitle}</h2>
         <div className="mt-7 grid gap-8 lg:grid-cols-3">
           <form
-            action="/api/contact"
-            method="post"
+            action="https://api.web3forms.com/submit"
+            method="POST"
             className="space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2"
           >
-            <input type="hidden" name="lang" value={lang} />
+            <input type="hidden" name="access_key" value="99cb1cd6-b4de-4111-9642-29311a50b00d" />
+            <input type="hidden" name="subject" value={`New contact from ${lang === "ar" ? "نفذ" : "Nafaz"}`} />
+            <input type="hidden" name="redirect" value={`${typeof window !== "undefined" ? window.location.origin : "https://nafaz-company.vercel.app"}/#contact`} />
             <input
               name="name"
               type="text"
