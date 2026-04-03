@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f9fafb;
+  --foreground: #1f2937;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.perf-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans), "Segoe UI", Tahoma, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-geist-mono), var(--font-geist-sans), sans-serif;
+  letter-spacing: -0.03em;
+}
+
+a,
+button,
+input,
+textarea {
+  font-family: var(--font-geist-sans), "Segoe UI", Tahoma, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .section-offset {
+    scroll-margin-top: 6.5rem;
+  }
+}

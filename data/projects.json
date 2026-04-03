@@ -1,0 +1,54 @@
+[
+  {
+    "id": "1773611443835-4wr5f6",
+    "titleAr": "موقع تعريفي لشركة برمجية",
+    "titleEn": "A website introducing a software company",
+    "descriptionAr": "موقع تعريفي تصميم مخصص ثابت لشركة برمجيات سريع الاستجابه بسيط",
+    "descriptionEn": "A static, custom-designed, responsive, and simple website for a software company.",
+    "stack": "Html , css , javascript",
+    "image": "/uploads/1773611440265-screenshot-2026-03-15-234357.png",
+    "projectUrl": "https://bluetech-6ffaf.web.app",
+    "published": true,
+    "createdAt": "2026-03-15T21:50:43.835Z",
+    "updatedAt": "2026-03-15T21:50:43.835Z"
+  },
+  {
+    "id": "proj-1",
+    "titleAr": "منصة عقارية فاخرة",
+    "titleEn": "Luxury Real Estate Platform",
+    "descriptionAr": "واجهة راقية وسريعة لإدارة العقارات والحجوزات.",
+    "descriptionEn": "A premium, fast interface for property management and bookings.",
+    "stack": "Next.js, PostgreSQL",
+    "image": "/uploads/1773611500041-screenshot-2026-03-15-233816.png",
+    "projectUrl": "https://nafaz-realestate.vercel.app/ar",
+    "published": true,
+    "createdAt": "2026-03-14T00:00:00.000Z",
+    "updatedAt": "2026-03-15T21:51:41.234Z"
+  },
+  {
+    "id": "proj-2",
+    "titleAr": "نظام إدارة سنتر تعليمي",
+    "titleEn": "Educational Center Management",
+    "descriptionAr": "متابعة الحضور، الجداول، والمدفوعات في لوحة واحدة.",
+    "descriptionEn": "Attendance, schedules, and payments in one operational dashboard.",
+    "stack": "Next.js, Node.js",
+    "image": "/uploads/1773610639372-screenshot-2026-01-03-221451.png",
+    "projectUrl": "https://www.youtube.com/watch?v=0hjwyQjED7o",
+    "published": true,
+    "createdAt": "2026-03-14T00:00:00.000Z",
+    "updatedAt": "2026-03-15T21:37:21.551Z"
+  },
+  {
+    "id": "proj-3",
+    "titleAr": "منصة تعليمية متكاملة",
+    "titleEn": "Integrated Learning Platform",
+    "descriptionAr": "بث محتوى، اختبارات، وتقارير أداء للطلاب.",
+    "descriptionEn": "Streaming lessons, assessments, and student performance analytics.",
+    "stack": "Node.js, PostgreSQL",
+    "image": "/uploads/1773611511285-screenshot-2026-03-15-234019.png",
+    "projectUrl": "https://lms-platform-fawn-eight.vercel.app/",
+    "published": true,
+    "createdAt": "2026-03-14T00:00:00.000Z",
+    "updatedAt": "2026-03-15T21:51:52.356Z"
+  }
+]
