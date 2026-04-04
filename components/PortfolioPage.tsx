@@ -20,6 +20,7 @@ import {
 } from "react-icons/fi";
 import { FaFacebookF, FaInstagram } from "react-icons/fa6";
 import { getPublishedProjectsByLang } from "@/lib/projects";
+import ThemeToggle from "@/components/ThemeToggle";
 
 type Lang = "ar" | "en";
 
@@ -58,6 +59,8 @@ const localized = {
     whatsappAria: "واتساب",
     facebookText: "فيسبوك",
     instagramText: "إنستجرام",
+    themeToDark: "الوضع الداكن",
+    themeToLight: "الوضع الفاتح",
     logoAlt: "شعار نَفِّذ",
     langButton: "EN",
   },
@@ -91,6 +94,8 @@ const localized = {
     whatsappAria: "WhatsApp",
     facebookText: "Facebook",
     instagramText: "Instagram",
+    themeToDark: "Dark Mode",
+    themeToLight: "Light Mode",
     logoAlt: "Nafaz logo",
     langButton: "AR",
   },
@@ -217,6 +222,7 @@ export default async function PortfolioPage({ lang }: PortfolioPageProps) {
             <a href="#contact" className="transition hover:text-blue-600">{t.navContact}</a>
           </nav>
           <div className="flex items-center gap-2 sm:gap-3">
+            <ThemeToggle toDarkLabel={t.themeToDark} toLightLabel={t.themeToLight} />
             <a
               href={langHref}
               className="rounded-full border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:bg-slate-100 sm:px-4 sm:text-sm"
