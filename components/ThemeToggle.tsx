@@ -14,8 +14,7 @@ export default function ThemeToggle({ toDarkLabel, toLightLabel }: ThemeTogglePr
   useEffect(() => {
     const root = document.documentElement;
     const stored = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const nextDark = stored === "dark" || (!stored && prefersDark);
+    const nextDark = stored === "dark";
 
     setIsDark(nextDark);
     root.classList.toggle("dark", nextDark);

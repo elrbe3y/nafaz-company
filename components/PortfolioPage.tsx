@@ -5,7 +5,10 @@ import {
   FiArrowRight,
   FiBriefcase,
   FiCode,
+  FiCpu,
+  FiDatabase,
   FiExternalLink,
+  FiGlobe,
   FiLayers,
   FiMail,
   FiMapPin,
@@ -186,11 +189,11 @@ const serviceIcons: Record<ServiceIconKey, ComponentType<{ className?: string }>
 };
 
 const techItems = [
-  { name: "Next.js", color: "bg-slate-900" },
-  { name: "Tailwind", color: "bg-cyan-500" },
-  { name: "Node.js", color: "bg-green-600" },
-  { name: "PHP", color: "bg-indigo-600" },
-  { name: "PostgreSQL", color: "bg-blue-700" },
+  { name: "Next.js", icon: FiCpu, color: "text-slate-900 bg-slate-100 dark:text-slate-100 dark:bg-slate-800" },
+  { name: "Tailwind", icon: FiGlobe, color: "text-cyan-700 bg-cyan-50 dark:text-cyan-200 dark:bg-cyan-950/40" },
+  { name: "Node.js", icon: FiCode, color: "text-green-700 bg-green-50 dark:text-green-200 dark:bg-green-950/35" },
+  { name: "PHP", icon: FiMonitor, color: "text-indigo-700 bg-indigo-50 dark:text-indigo-200 dark:bg-indigo-950/35" },
+  { name: "PostgreSQL", icon: FiDatabase, color: "text-blue-700 bg-blue-50 dark:text-blue-200 dark:bg-blue-950/35" },
 ];
 
 export default async function PortfolioPage({ lang }: PortfolioPageProps) {
@@ -379,11 +382,11 @@ export default async function PortfolioPage({ lang }: PortfolioPageProps) {
         className="perf-section mx-auto w-full max-w-6xl px-5 py-14 sm:px-8"
       >
         <h2 className="text-3xl font-bold text-slate-900">{t.techTitle}</h2>
-        <div className="mt-8 grid grid-cols-2 gap-6 text-slate-700 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="mt-8 grid grid-cols-2 gap-4 text-slate-700 sm:grid-cols-3 lg:grid-cols-5">
           {techItems.map((tech) => (
-            <div key={tech.name} className="flex items-center gap-3">
-              <span className={`h-3.5 w-3.5 rounded-full ${tech.color}`} />
-              <span>{tech.name}</span>
+            <div key={tech.name} className={`flex items-center gap-3 rounded-2xl border px-4 py-3 ${tech.color}`}>
+              <tech.icon className="h-5 w-5" aria-hidden />
+              <span className="text-sm font-medium">{tech.name}</span>
             </div>
           ))}
         </div>
