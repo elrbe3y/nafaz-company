@@ -21,6 +21,7 @@ import {
 import { FaFacebookF, FaInstagram } from "react-icons/fa6";
 import { getPublishedProjectsByLang } from "@/lib/projects";
 import ThemeToggle from "@/components/ThemeToggle";
+import ContactForm from "@/components/ContactForm";
 
 type Lang = "ar" | "en";
 
@@ -55,6 +56,10 @@ const localized = {
     inputAddress: "العنوان",
     inputMessage: "الرسالة",
     send: "إرسال",
+    sending: "جاري إرسال الرسالة...",
+    sentSuccess: "تم إرسال الرسالة بنجاح.",
+    sentFailed: "فشل إرسال الرسالة.",
+    unknownError: "حدث خطأ غير متوقع. حاول مرة أخرى.",
     copyright: "© 2026 جميع الحقوق محفوظة",
     whatsappAria: "واتساب",
     facebookText: "فيسبوك",
@@ -90,6 +95,10 @@ const localized = {
     inputAddress: "Address",
     inputMessage: "Message",
     send: "Send",
+    sending: "Sending message...",
+    sentSuccess: "Your message was sent successfully.",
+    sentFailed: "Message failed to send.",
+    unknownError: "An unexpected error occurred. Please try again.",
     copyright: "© 2026 All rights reserved",
     whatsappAria: "WhatsApp",
     facebookText: "Facebook",
@@ -180,11 +189,11 @@ const serviceIcons: Record<ServiceIconKey, ComponentType<{ className?: string }>
 };
 
 const techItems = [
-  { name: "Next.js", icon: FiCpu, color: "text-slate-900 bg-slate-100" },
-  { name: "Tailwind", icon: FiGlobe, color: "text-cyan-700 bg-cyan-50" },
-  { name: "Node.js", icon: FiCode, color: "text-green-700 bg-green-50" },
-  { name: "PHP", icon: FiMonitor, color: "text-indigo-700 bg-indigo-50" },
-  { name: "PostgreSQL", icon: FiDatabase, color: "text-blue-700 bg-blue-50" },
+  { name: "Next.js", icon: FiCpu, color: "text-slate-900 bg-slate-100 dark:text-slate-100 dark:bg-slate-800" },
+  { name: "Tailwind", icon: FiGlobe, color: "text-cyan-700 bg-cyan-50 dark:text-cyan-200 dark:bg-cyan-950/40" },
+  { name: "Node.js", icon: FiCode, color: "text-green-700 bg-green-50 dark:text-green-200 dark:bg-green-950/35" },
+  { name: "PHP", icon: FiMonitor, color: "text-indigo-700 bg-indigo-50 dark:text-indigo-200 dark:bg-indigo-950/35" },
+  { name: "PostgreSQL", icon: FiDatabase, color: "text-blue-700 bg-blue-50 dark:text-blue-200 dark:bg-blue-950/35" },
 ];
 
 export default async function PortfolioPage({ lang }: PortfolioPageProps) {
@@ -389,56 +398,21 @@ export default async function PortfolioPage({ lang }: PortfolioPageProps) {
       >
         <h2 className="text-3xl font-bold text-blue-700">{t.contactTitle}</h2>
         <div className="mt-7 grid gap-8 lg:grid-cols-3">
-          <form
-            action="https://api.web3forms.com/submit"
-            method="POST"
-            className="space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2"
-          >
-            <input type="hidden" name="access_key" value="99cb1cd6-b4de-4111-9642-29311a50b00d" />
-            <input type="hidden" name="subject" value={`New contact from ${lang === "ar" ? "نفذ" : "Nafaz"}`} />
-            <input type="hidden" name="redirect" value={`${typeof window !== "undefined" ? window.location.origin : "https://nafaz-company.vercel.app"}/#contact`} />
-            <input
-              name="name"
-              type="text"
-              placeholder={t.inputName}
-              required
-              className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-blue-500"
-            />
-            <input
-              name="email"
-              type="email"
-              placeholder={t.inputEmail}
-              required
-              className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-blue-500"
-            />
-            <input
-              name="phone"
-              type="tel"
-              placeholder={t.inputPhone}
-              required
-              className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-blue-500"
-            />
-            <input
-              name="address"
-              type="text"
-              placeholder={t.inputAddress}
-              required
-              className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-blue-500"
-            />
-            <textarea
-              name="message"
-              rows={5}
-              placeholder={t.inputMessage}
-              required
-              className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-blue-500"
-            />
-            <button
-              type="submit"
-              className="rounded-xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
-            >
-              {t.send}
-            </button>
-          </form>
+          <ContactForm
+            lang={lang}
+            labels={{
+              inputName: t.inputName,
+              inputEmail: t.inputEmail,
+              inputPhone: t.inputPhone,
+              inputAddress: t.inputAddress,
+              inputMessage: t.inputMessage,
+              send: t.send,
+              sending: t.sending,
+              sentSuccess: t.sentSuccess,
+              sentFailed: t.sentFailed,
+              unknownError: t.unknownError,
+            }}
+          />
 
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <h3 className="text-lg font-bold text-slate-900">{t.contactInfoTitle}</h3>
